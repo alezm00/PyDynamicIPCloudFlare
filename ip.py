@@ -52,7 +52,7 @@ if __name__ == "__main__":
     if (not hasattr(config,'ZONE_ID') and
         not hasattr(config,'BASE_LINK_ALL') and
         not hasattr(config,'API_TOKEN') and
-        not hasattr(BASE_LINK_ALL,'RECORD_NAME')):
+        not hasattr(config,'RECORD_NAME')):
 
             print("config error",'\n')
             print("Must be defined like in the file config.py.example",'\n')
