@@ -1,0 +1,4 @@
+ZONE_ID = "YOUR_ZONE_ID_TOKEN"
+BASE_LINK_ALL = "https://api.cloudflare.com/client/v4/zones/"
+API_TOKEN = "YOUR_API_TOKEN"
+RECORD_NAME = 'RECORDNAME'

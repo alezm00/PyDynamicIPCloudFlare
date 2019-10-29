@@ -1,9 +1,5 @@
-import requests,time,json
+import requests,time,json,config
 
-ZONE_ID = "YOUR_ZONE_ID_TOKEN"
-BASE_LINK_ALL = "https://api.cloudflare.com/client/v4/zones/"
-API_TOKEN = "YOUR_API_TOKEN"
-RECORD_NAME = 'RECORDNAME'
 
 
 def GetIP():
@@ -53,4 +49,17 @@ def update():
 
 
 if __name__ == "__main__":
-    update()
+    if (not hasattr(config,'ZONE_ID') and
+        not hasattr(config,'BASE_LINK_ALL') and
+        not hasattr(config,'API_TOKEN') and
+        not hasattr(BASE_LINK_ALL,'RECORD_NAME')):
+
+            print("config error",'\n')
+            print("Must be defined like in the file config.py.example",'\n')
+    else:
+        ZONE_ID = config.ZONE_ID
+        BASE_LINK_ALL = config.BASE_LINK_ALL
+        API_TOKEN = config.API_TOKEN
+        RECORD_NAME = config.RECORD_NAME
+        update()
+        k=input("Script completed press Enter to exit") 
